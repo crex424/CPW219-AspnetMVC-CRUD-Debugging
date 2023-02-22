@@ -15,7 +15,9 @@ namespace CPW219_AspnetMVC_CRUD_Debugging.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            List<Product> products = await _context.Product.ToListAsync();
+
+            return View(products);
         }
 
         public IActionResult Create()
